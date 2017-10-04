@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Aides</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Slack name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aides.each do |aide| %>
+      <tr>
+        <td><%= aide.name %></td>
+        <td><%= aide.slack_name %></td>
+        <td><%= link_to 'Show', aide %></td>
+        <td><%= link_to 'Edit', edit_aide_path(aide) %></td>
+        <td><%= link_to 'Destroy', aide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aide', new_aide_path %>

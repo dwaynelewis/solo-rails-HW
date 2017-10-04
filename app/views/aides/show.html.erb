@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @aide.name %>
+</p>
+
+<p>
+  <strong>Slack name:</strong>
+  <%= @aide.slack_name %>
+</p>
+
+
+<p>
+  <strong>Aide:</strong>
+  <%= @aide.name %>
+</p>
+
+<p>
+  <strong>Slack_name</strong>
+  <%= @aide.slack_name %>
+</p>
+
+<h2>Add a student:</h2>
+<%= form_with(model: [ @aide, @aide.students.new ], local: true) do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :slack_name %><br>
+    <%= form.text_field :slack_name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_aide_path(@aide) %> |
+<%= link_to 'Back', aides_path %>

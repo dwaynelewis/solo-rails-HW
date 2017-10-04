@@ -1,0 +1,2 @@
+class ChangeStudent < ApplicationRecord
+end
